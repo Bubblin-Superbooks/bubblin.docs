@@ -5,8 +5,8 @@ const PUBLIC = path.resolve(__dirname, 'public')
 const SRC = path.resolve(__dirname, 'src')
 
 export default {
-  title: 'Bookiza Abelone',
-  description: 'Book reification framework for the web.',
+  title: 'Bubblin Superbooks',
+  description: 'Documentation for the Superbook Format & the Binge Reader for the Web.',
   indexHtml: 'public/index.html',
   theme: 'src/theme/index',
   typescript: true,

@@ -1,10 +1,10 @@
 {
-  "name": "bookiza-docs",
+  "name": "bubblin.docs",
   "version": "0.0.0",
   "license": "Parity-6.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bookiza/bookiza.docs"
+    "url": "https://github.com/bookiza/bubblin.docs"
   },
   "scripts": {
     "dev": "docz dev",

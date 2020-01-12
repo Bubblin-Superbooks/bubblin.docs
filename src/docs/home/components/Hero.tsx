@@ -9,7 +9,7 @@ import image from '@images/header-img.png'
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: #ff7f7f;
+  background-color: #f0fffe;
   background-position: center;
   border-bottom: 1px solid ${p => p.theme.colors.grayLight};
 
@@ -28,12 +28,12 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
-  font-weight: 900;
+  font-weight: 800;
   text-align: center;
-  margin: 0;
+  margin: 1vw;
   padding: 0;
   font-size: 8vh;
-  font-family: 'Fascinate', cursive;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Fira Sans, sans-serif!important;
   line-height: 1;
 `
 
@@ -60,14 +60,14 @@ export const Hero = () => {
   return (
     <Wrapper>
       <Container>
-        <Logo height={300} style={{ maxWidth: '100%' }} />
-        <Title>Bookiza Abelone</Title>
-        <Subtitle><strong>Bookiza</strong> is a lightweight book reification framework for the web. </Subtitle>
+        <Logo height={100} style={{ maxWidth: '100%' }} />
+        <Title>Bubblin Superbooks</Title>
+        <Subtitle>Documentation for the <strong>Superbook</strong> format and the "book making" interface for the web.</Subtitle>
         <GitHubButton
           type="stargazers"
           size="large"
           namespace="bookiza"
-          repo="bookiza.cli"
+          repo="bubblin.docs"
         />
         <Image src={image} alt="Built-in components" />
         <Buttons>

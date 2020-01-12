@@ -15,7 +15,7 @@ const Wrapper = styled.header`
   width: 100%;
   position: fixed;
   height: 60px;
-  background-image: linear-gradient(to right, #98fe92 0%, #fdff49 100%);
+  background-image: linear-gradient(to right, #fe92d5 0%, #ffe166 100%);
 
   ${Container} {
     display: flex;
@@ -31,7 +31,7 @@ const Wrapper = styled.header`
 `
 
 const LogoLink = styled(Link)`
-  height: 45px;
+  height: 40px;
 `
 
 const Menu = styled.div`
@@ -108,7 +108,7 @@ export const Topbar = () => {
     <Wrapper>
       <Container>
         <LogoLink to="/">
-          <Logo height={50} small={!showFullMenu} />
+          <Logo height={40} small={!showFullMenu} />
         </LogoLink>
         <Menu>
           {showFullMenu &&
