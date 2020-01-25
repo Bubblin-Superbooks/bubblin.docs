@@ -1,5 +1,5 @@
 ---
-name: How to write a Superbook using a web editor?
+name: How to create a Superbook using the web editor.
 route: /docs/tutorial
 parent: Documentation
 menu: Superbook
@@ -10,9 +10,9 @@ In this tutorial we will take a look at creating a Superbook using Bubblin's onl
 
 ## Book playground
 
-Bubblin lets you compose book online using its in-browser [book playground](/docs/setup)—a simple code playground for page-by-page book editing. This editor is powerful enough for short stories, comics, weekly or biweekly magazines and other sort of miscellaneous items like greeting cards, restaurant menus and brochures. Theoretically speaking one could also write a novella and full length textbook using the same editor but this is generally not recommended. 
+Bubblin lets you compose book online using its in-browser [book playground](/docs/setup)—a simple code playground for page-by-page book editing. This editor is powerful enough for short stories, comics, weekly or biweekly magazines and other sort of miscellaneous items like greeting cards, restaurant menus and brochures. Theoretically speaking one could also write a novella and full length textbook using the same editor but this is generally not recommended.
 
-For a really long body of work we recommend using [Bookiza Abelone](http://bookiza.io)—a book reification framework instead. 
+For a really long body of work we recommend using [Bookiza Abelone](http://bookiza.io)—a book reification framework instead.
 
 The tutorial below will focus on using the in-browser book playground along with a quick overview on how Superbooks work:
 
@@ -32,7 +32,7 @@ To start a _new_ project, login into your Bubblin Account and click on the `new`
 </div>
 <br/>
 
-Or press '⌘ + M' to open a new _manuscript_ project (other relevant keyboard [shortcuts](/docs/shortcuts) on your browser, which will look something like this: 
+Or press '⌘ + M' to open a new _manuscript_ project (other relevant keyboard [shortcuts](/docs/shortcuts) on your browser, which will look something like this:
 
 <br/>
 <div class="two-third center">
@@ -44,12 +44,12 @@ Three large dark colored (gray/black) textareas at the bottom to punch in HTML, 
 
 ### Step - 2: Understanding Structure and Layout
 
-First off, take a look at what each [page](/docs/structure) looks like in on the inside. Do not worry if you haven't written or seen HTML earlier in your life because we are going to use only very basic HTML for this tutorial and no knowledge or understanding of it is required for book writing on Bubblin. 
+First off, take a look at what each [page](/docs/structure) looks like in on the inside. Do not worry if you haven't written or seen HTML earlier in your life because we are going to use only very basic HTML for this tutorial and no knowledge or understanding of it is required for book writing on Bubblin.
 
 Feel free to copy and paste the following code into the gray/black HTML textarea of the editor (bottom left of the editor).
 
 The following HTML wrapper will sit on every page of the book:
- 
+
 ```
 
 <div class="leaf flex">
@@ -72,7 +72,7 @@ Go to the `Layout` dropdown menu again and click open the CSS option as shown 
   <img src="https://raw.githubusercontent.com/marvindanig/assets/master/layout-dropdown.jpg" width="100%" />
 </div>
 
-Sprinkle the following [template](https://github.com/bookiza/templates/blob/master/novels/novella/style.css) into the CSS textarea to apply a `layout` and `typesetting` into the book. Hit `save` and you'll see all the pages turning white and some formatting applied to the initial _lorem ipsum_ text we pasted earlier: 
+Sprinkle the following [template](https://github.com/bookiza/templates/blob/master/novels/novella/style.css) into the CSS textarea to apply a `layout` and `typesetting` into the book. Hit `save` and you'll see all the pages turning white and some formatting applied to the initial _lorem ipsum_ text we pasted earlier:
 
 
 {% highlight css %}
@@ -110,7 +110,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'PT Sans Narrow', serif;    
+    font-family: 'PT Sans Narrow', serif;
     margin: 2vw 0;
     padding: 0;
 }
@@ -149,10 +149,10 @@ a:active {
 }
 
 .inner {
-  margin: calc((100vh - (17 * (4vw * 1.5) + 4vw))/2) auto; 
+  margin: calc((100vh - (17 * (4vw * 1.5) + 4vw))/2) auto;
   width: 85vw;
   max-height: calc(17 * (4vw * 1.5) + 4vw);
-  break-after: right; 
+  break-after: right;
 }
 
 .flex {
@@ -167,11 +167,11 @@ a:active {
 }
 
 p {
-    text-indent: 5vw;  
+    text-indent: 5vw;
     margin: 0 0 0 0;
 /*    -webkit-hyphens: auto;
     -moz-hyphens: auto;
-    hyphens: auto; 
+    hyphens: auto;
 */
 }
 
@@ -191,7 +191,7 @@ hr.section {
   border: 0;
   text-align: center;
   height: calc(4vw * 1.50);          /* Take a break of two lines only. */
-  margin: calc((4vw * 1.50)/2) 0; 
+  margin: calc((4vw * 1.50)/2) 0;
 }
 
 hr.section::after {
@@ -199,7 +199,7 @@ hr.section::after {
 }
 
 hr.section::before {
-  content: "❖"; 
+  content: "❖";
   color: black;
 }
 
@@ -208,7 +208,7 @@ hr {
   border: 0;
   text-align: center;
   height: calc(4vw * 1.50);          /* Take a break of two lines only. */
-  margin: calc((4vw * 1.50)/2) 0; 
+  margin: calc((4vw * 1.50)/2) 0;
 }
 
 hr::after {
@@ -252,19 +252,19 @@ blockquote p {
 
 
 pre, code {
-  white-space: pre-wrap;     
+  white-space: pre-wrap;
   white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;  
+  white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
-  margin: 0 auto calc( 4 * (150vh *(1115/1443))/100 * 7/5); 
-  font-size: 90%;  
+  margin: 0 auto calc( 4 * (150vh *(1115/1443))/100 * 7/5);
+  font-size: 90%;
 }
 
 h3 {
   font-family: 'Josefin Sans', sans-serif;
   line-height: 1.2em;
-  font-size: 200%;  
+  font-size: 200%;
 }
 
 .zcool {
@@ -273,7 +273,7 @@ h3 {
 }
 
 .uppercase {
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 
 /* Custom style below line */
@@ -282,7 +282,7 @@ h3 {
 
 Wow. Did you see what just happened here?
 
-When you save the layout template, all the pages of the book change simulatneously. This is a very powerful feature because it lets you apply a uniform layout across the entire book from just one place. At the same time there is flexibility of adding CSS on each individual page using the gray/black textarea on the book editor. 
+When you save the layout template, all the pages of the book change simulatneously. This is a very powerful feature because it lets you apply a uniform layout across the entire book from just one place. At the same time there is flexibility of adding CSS on each individual page using the gray/black textarea on the book editor.
 
 How cool is that!?
 
