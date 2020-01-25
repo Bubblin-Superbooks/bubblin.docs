@@ -122,7 +122,7 @@ export const Topbar = () => {
             })}
           <IconLink
             as="a"
-            href="https://bubblin.io/blog/"
+            href="https://bubblin.io/blog/category/bubblin"
             target="_blank"
           >
             Blog
