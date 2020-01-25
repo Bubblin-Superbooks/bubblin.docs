@@ -1,0 +1,307 @@
+---
+name: How to write a Superbook using a web editor?
+route: /docs/tutorial
+parent: Documentation
+menu: Superbook
+---
+# How to write a superbook using web editor?
+
+In this tutorial we will take a look at creating a Superbook using Bubblin's online 'book playground.'
+
+## Book playground
+
+Bubblin lets you compose book online using its in-browser [book playground](/docs/setup)—a simple code playground for page-by-page book editing. This editor is powerful enough for short stories, comics, weekly or biweekly magazines and other sort of miscellaneous items like greeting cards, restaurant menus and brochures. Theoretically speaking one could also write a novella and full length textbook using the same editor but this is generally not recommended. 
+
+For a really long body of work we recommend using [Bookiza Abelone](http://bookiza.io)—a book reification framework instead. 
+
+The tutorial below will focus on using the in-browser book playground along with a quick overview on how Superbooks work:
+
+<!-- #### A simple static book.
+
+Let us begin with the a quick demo. It's fine if you don't understand everything immediately, we will go into all the basics through this article and learn how to create and publish a Superbook. *Superbook* here means *superclass* of books. It is an empty container that holds the pages of your story, which could be anything, a comics book or a magazine or textbook or a greeting card, anything you wish to publish.
+
+Here's a [demo](https://bubblin.io/book/official-handbook-by-marvin-danig/1) of a live Superbook on production.
+ -->
+### Step - 1: Starting a new project
+
+To start a _new_ project, login into your Bubblin Account and click on the `new` button from the side panel under the Bubblin logo (see image below). 
+
+<br/>
+<div class="two-third center">
+  <img src="https://raw.githubusercontent.com/bubblin/Official-Handbook/master/assets/images/new_project.jpg" width="100%" />
+</div>
+<br/>
+
+Or press '⌘ + M' to open a new _manuscript_ project (other relevant keyboard [shortcuts](/docs/shortcuts) on your browser, which will look something like this: 
+
+<br/>
+<div class="two-third center">
+  <img src="https://raw.githubusercontent.com/bubblin/Official-Handbook/master/assets/images/superbook-editor.png" width="100%" />
+</div>
+<br/>
+
+Three large dark colored (gray/black) textareas at the bottom to punch in HTML, CSS and JavaScript on each page of the book and a dropdown menu on the top with a large blue colored 'Publish' button near the site logo. The dropdown will have options `book`, `page`, `layout` and `pricing` on the menu with several options under each submenu. The editor will also show four bluish colored blank pages (two leafs) that can be navigated using left and right arrow keys (on keyboard) or buttons on the screen. Near the left of (gray/black) textarea, you'll see a highlighted `ActivePage` indicating the `page_number` on which the editor is currently focused on.
+
+### Step - 2: Understanding Structure and Layout
+
+First off, take a look at what each [page](/docs/structure) looks like in on the inside. Do not worry if you haven't written or seen HTML earlier in your life because we are going to use only very basic HTML for this tutorial and no knowledge or understanding of it is required for book writing on Bubblin. 
+
+Feel free to copy and paste the following code into the gray/black HTML textarea of the editor (bottom left of the editor).
+
+The following HTML wrapper will sit on every page of the book:
+ 
+```
+
+<div class="leaf flex">
+  <div class="inner justify ">
+    <h1> Hello world! </h1>
+    <p> Lorem ipsum dolor sit amet, <a href="https://wikipedia.com">consectetur</a> adipiscing elite... </p>
+  </div>
+</div>
+
+```
+
+While you are at it also paste the same HTML wrapper into the `HTML` option under the `Layout` dropdown menu as shown below. Yes, paste it in both the places!
+
+
+Note that we are using a cool `flex` class on leaf here that we'll use shortly. Awesome! So now we have a heading text saying "Hello world!" and a bit of *lorem ipsum* inside a paragraph tag on the first page, but there is no layout. We'll add that next, a layout: 
+
+Go to the `Layout` dropdown menu again and click open the CSS option as shown below:
+
+<div class="two-third center">
+  <img src="https://raw.githubusercontent.com/marvindanig/assets/master/layout-dropdown.jpg" width="100%" />
+</div>
+
+Sprinkle the following [template](https://github.com/bookiza/templates/blob/master/novels/novella/style.css) into the CSS textarea to apply a `layout` and `typesetting` into the book. Hit `save` and you'll see all the pages turning white and some formatting applied to the initial _lorem ipsum_ text we pasted earlier: 
+
+
+{% highlight css %}
+
+html, body {
+  background: #fff;
+  margin: 0 0;
+  overflow: hidden;
+  color: #010203;
+  height:100vh;
+  width:100vw;
+  font-family: 'EB Garamond', serif;
+  font-style: normal;
+  font-synthesis: none;
+  font-stretch: ultra-condensed;
+  font-variant: no-common-ligatures proportional-nums slashed-zero;
+  font-size: 4vw;
+  line-height: calc(4vw * 1.50);
+  font-kerning: normal;
+  text-rendering: geometricPrecision;
+}
+
+
+h1, h2, h3, h4 {
+  margin: 1vw 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'PT Sans Narrow', serif;    
+    margin: 2vw 0;
+    padding: 0;
+}
+
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+a {
+  color: #0077ff;
+  outline: 0 none;
+  text-decoration: none;
+}
+
+a:focus,
+a:active,
+a:hover {
+  outline: 0 none;
+  color: #070;
+}
+
+a:active {
+  text-shadow: 0 0 2px #fff;
+}
+
+/* Page specific */
+
+.leaf {
+  height: 100%;
+  height: 100vh;
+  width: 100%;
+  width: 100vw;
+  margin: auto;
+}
+
+.inner {
+  margin: calc((100vh - (17 * (4vw * 1.5) + 4vw))/2) auto; 
+  width: 85vw;
+  max-height: calc(17 * (4vw * 1.5) + 4vw);
+  break-after: right; 
+}
+
+.flex {
+  display: -webkit-box;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+p {
+    text-indent: 5vw;  
+    margin: 0 0 0 0;
+/*    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto; 
+*/
+}
+
+.no-indent {
+  text-indent: 0;
+}
+
+.stretch-last-line {
+  text-align-last: justify;
+}
+
+.squeeze-para {
+  letter-spacing: -0.5px;
+}
+
+hr.section {
+  border: 0;
+  text-align: center;
+  height: calc(4vw * 1.50);          /* Take a break of two lines only. */
+  margin: calc((4vw * 1.50)/2) 0; 
+}
+
+hr.section::after {
+  content: "";
+}
+
+hr.section::before {
+  content: "❖"; 
+  color: black;
+}
+
+
+hr {
+  border: 0;
+  text-align: center;
+  height: calc(4vw * 1.50);          /* Take a break of two lines only. */
+  margin: calc((4vw * 1.50)/2) 0; 
+}
+
+hr::after {
+  content: " ";
+}
+
+hr::before {
+  content: "== ❖ ==";
+  color: black;
+}
+
+
+.pad-vertically{
+  padding: calc(4vw * 1) 0;
+}
+
+
+.center {
+  text-align: center;
+  margin:0 auto;
+}
+
+.small {
+  font-size: 80%;
+}
+
+
+blockquote {
+  text-align:center;
+  font-size: 90%;
+  font-style: italic;
+  position:relative;
+  quotes: "\201C""\201D""\2018""\2019";
+  width: 90%;
+  margin: calc( 4 * (150vh *(1115/1443))/100 * 7/5) auto;
+}
+
+blockquote p {
+  margin: calc( 4 * (150vh *(1115/1443))/100 * 7/5) auto !important;
+}
+
+
+pre, code {
+  white-space: pre-wrap;     
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;  
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  margin: 0 auto calc( 4 * (150vh *(1115/1443))/100 * 7/5); 
+  font-size: 90%;  
+}
+
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.2em;
+  font-size: 200%;  
+}
+
+.zcool {
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.2em;
+}
+
+.uppercase {
+  text-transform: uppercase;  
+}
+
+/* Custom style below line */
+
+{% endhighlight %}
+
+Wow. Did you see what just happened here?
+
+When you save the layout template, all the pages of the book change simulatneously. This is a very powerful feature because it lets you apply a uniform layout across the entire book from just one place. At the same time there is flexibility of adding CSS on each individual page using the gray/black textarea on the book editor. 
+
+How cool is that!?
+
+<br/>
+<div class="two-third center">
+  <img src="https://raw.githubusercontent.com/bubblin/Official-Handbook/master/assets/images/laid.jpg" width="100%"/>
+</div>
+<br/>
+
+CSS will format your book, add desired typography and position the content i.e heading "hello world" and the paragraphs near the _mid-axis_ of the book. It will also set up _faux_ margin & padding on either sides of the text, both above and below—in a way that is always balanced near the horizontal axis of the page. Say thanks to `flexbox` css property for this!
+
+> Stick no more than 16-18 lines of text per page. Always test your book by previewing and resizing your browser.
+
+Do not cram in too much content on just one page. Stick to just two small-sized paragraphs or three small lines at most. Flip over to the next page if line is breaking and always maintain *visual symmetry* to avoid overflow and for better line-tracking. Continue adding new pages into your book until the story finishes. New pages will automatically use the layout CSS and HTML template we just added in the `Layout` dropdown above. When your book is ready hit `Publish` and serve it hot on the wire. That's it: in just two bold steps your book is now available to anyone on the planet. And outside, even on the ISS… ;-)
+
+<br/>
+<div class="two-third center">
+  <img src="https://raw.githubusercontent.com/bubblin/Official-Handbook/master/assets/images/bubblin-editor-browser-frame.jpg" width="100%" />
+</div>
+<br/>
+
+You see what we did there?
