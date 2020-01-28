@@ -1,0 +1,33 @@
+---
+name: Page Numbering
+route: /docs/numbering
+parent: Documentation
+menu: Author
+---
+# Numbering
+Textbooks require displaying page numbers to tell the readers where they are on the book. To enable page numbering:
+
+Check the checkbox on `page` dropdown as shown below:
+
+<div class="two-third center">
+<img src="https://raw.githubusercontent.com/marvindanig/assets/master/numbering.jpg" width="100%" />
+</div>
+
+If you're using Bookiza, set the `has_page_numbers` property on [.bookrc](https://bubblin.io/bookiza/docs/preprocessors) to `true`, like so:
+
+	$ vi .bookrc 	// In your project root.
+
+```json
+{
+  "mode": {
+    "HTML": "haml",
+    "CSS": "scss",
+    "JS": "js",
+    "HEAD": "html"
+  },
+  "name": "My next great textbook!",
+  "type": "text",
+  "has_page_numbers": true
+}
+
+```

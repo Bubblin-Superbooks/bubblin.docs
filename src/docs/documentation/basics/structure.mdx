@@ -1,0 +1,64 @@
+---
+name: HTML Structure
+route: /docs/structure
+parent: Documentation
+menu: Basics
+---
+
+# Structure of a page
+
+A `<page>` on a Superbook is a typical iframe, or in other words, a standard webpage with plain markup (HTML), style (CSS) and optionally JavaScript.
+
+The only difference is that it has only a limited amount of each and the content _must_ always remain above the fold. The content _must_ also scale responsively. The Superbook will automatically scale itself and occupy maximum available height and width on the viewport while maintaining a fixed aspect ratio that switches from portrait to landscape mode automatically. Resize your browser to see this in action:
+
+> Demo book [Bookiza Documentation](https://bubblin.io/book/bookiza-documentation-by-marvin-danig/1) (Resize the browser after flipping through a few pages.)
+
+Since every `<page>` is a virgin `iframe` it contains the usual components that ismake up the web. There are four components that make up a webpage:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head> /* <!-- COMPONENT-IV --> */
+        <title> { _title_of_the_book_ + /page_no } </title>
+        <style>
+            /*  COMPONENT-II  */
+
+
+
+            /* Insert _book_layout_template_ + _page_specific_styles_ if any? */
+            /* Generally, the html, body {} elements are assigned a height of 100vh and width 100vw.  */
+            /* See CSS template of a book deployed in production: */
+            /* https://github.com/marvindanig/bookiza-framework/blob/master/templates/style.scss */
+      	</style>
+      	<!-- HTML of other head resources via cdnjs or polyfill.io here. (COMPONENT-IV) -->
+    </head>
+    <body>
+      <!-- COMPONENT-I (This is the content of the page that the reader sees) -->
+      <!-- Few paragraphs of neatly formatted content here. -->
+      …
+      …
+      …
+      <script type="text/javascript">
+        // COMPONENT-III
+        // Author scripts inserted here at the bottom of iframe
+      </script>
+    </body>
+</html>
+```
+
+As you can see from above there are four main pieces that go into making a complete `<page>`:
+
+1. BODY HTML (Component-I),
+2. STYLE rule for layout (Component-II),
+3. SCRIPTS at the bottom of the `iframe` (Component-III), if required, and
+3. HEAD resources (Component-IV), if required.
+
+All four components can be fiddled with using Bubblin's [in-browser]({{ site.baseurl }}{% post_url 2018-01-01-setup %}) editor as shown below:
+
+<div class="two-third center">
+  <img src="https://raw.githubusercontent.com/bubblin/Official-Handbook/master/assets/images/bubblin-editor-browser-frame.jpg" width="100%" />
+</div>
+
+
+If you're using [Bookiza Abelone](https://bookiza.io) to manage your manuscript, it will show the same `<page>` structure inside the `manuscript/` folder. There you'll see subdirectories like `page-1`, `page-2`, `page-3`… `page-2N`, with each to carry four components that make up a `<page>` i.e. a `body.html` file (mandatory), a `style.css` file, a `head.html` file and a `scripts.js` file if required.
+
