@@ -1,0 +1,20 @@
+---
+name: Removing Pages
+route: /docs/removingpages
+parent: Documentation
+menu: Superbook
+---
+# Removing pages
+
+While adding a page automatically adds 2 pages at a time, removing deletes only 1 page from the book.
+
+<div class="two-third center">
+<img src="https://raw.githubusercontent.com/marvindanig/assets/master/delete-page.jpg" width="100%" />
+</div>
+
+Bookiza on the other hand, removes the page at `page_no` and append a new blank page at the end of the manuscript to maintain the length of the book.
+Try with:
+
+```
+$ bookiza remove [page_no]
+```
