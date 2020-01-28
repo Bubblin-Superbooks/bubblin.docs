@@ -6,7 +6,7 @@ const SRC = path.resolve(__dirname, 'src')
 
 export default {
   title: 'Bubblin Superbooks',
-  description: 'Documentation for the Superbook Format & the Binge Reader for the Web.',
+  description: 'Documentation for Bubblin and the Superbook Format.',
   indexHtml: 'public/index.html',
   theme: 'src/theme/index',
   typescript: true,
@@ -19,28 +19,16 @@ export default {
   },
   menu: [
     {
-      name: 'General',
+      name: 'Basics',
       menu: [
         'Introduction',
-        'Getting started',
-        'Writing MDX',
-        'Built-in components',
-        'Document settings',
-        'Deploying your docs',
+        'Getting Started'
       ],
-    },
-    {
-      name: 'Customizing',
-      menu: ['Powered by Gatsby', 'Gatsby Theme', 'Creating your themes'],
     },
     {
       name: 'References',
       menu: [
-        'Migration Guide',
-        'Project Configuration',
-        'Reusable Helpers',
-        'Creating Plugins',
-        'MDX Plugins',
+        'SEO',
       ],
     },
   ],

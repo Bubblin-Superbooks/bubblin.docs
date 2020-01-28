@@ -61,15 +61,8 @@ export const Hero = () => {
     <Wrapper>
       <Container>
         <Logo height={100} style={{ maxWidth: '100%' }} />
-        <Title>Bubblin Superbooks</Title>
-        <Subtitle>Documentation for the <strong>Superbook</strong> format and the "book making" interface for the web.</Subtitle>
-        <GitHubButton
-          type="stargazers"
-          size="large"
-          namespace="bookiza"
-          repo="bubblin.docs"
-        />
-        <Image src={image} alt="Built-in components" />
+        <Title>Bubblin Documentation</Title>
+        <Subtitle>Understanding the <strong>Superbook</strong> format and the Bubblin Book Baking api.</Subtitle>
         <Buttons>
           <Link scale="big" to="/docs/getting-started">
             Getting Started

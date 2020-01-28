@@ -1,5 +1,5 @@
 ---
-name: Guide to typography
+name: Typography
 route: /docs/typography
 parent: Documentation
 menu: Author
@@ -13,9 +13,8 @@ First off, any typography that you decide to use _must_ be web-compatible. Bubbl
 
 The following `@import` is available via the root window i.e. `spine_url` of your book:
 
-```
+```html
 @import https://fonts.googleapis.com/css?family=Raleway|Lobster|EB+Garamond:400,400i
-
 ```
 
 
@@ -26,9 +25,13 @@ The following `@import` is available via the root window i.e. `spine_url` of you
 
 Using any of the fonts listed above or the default ones on a browser will keep the number of http requests and the total weight of your book in control, and thus not affect the speed at which your book loads on the client. This is specially important for users on low powered  devices such as mobile.
 
-### Using custom fonts
+### Custom fonts
 
-If for some reason you are considering using custom web-compatible typography such as from awesome [Google Fonts API](https://developers.google.com/fonts/) (or any other font hosting service) on your book, we recommend you do so as specified in the section on [best practices](/docs/practices).
+Using custom typography is very easy on a Superbook.
+The only condition is that the typeface be web-compatible,
+such as that from [Google Fonts API](https://developers.google.com/fonts/)
+or other similar font hosting services. Checkout the section on
+[best practices](/docs/practices) for better performance of your book.
 
 Include the font using link helper like so:
 
