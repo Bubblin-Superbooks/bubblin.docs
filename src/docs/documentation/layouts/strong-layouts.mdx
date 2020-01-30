@@ -4,3 +4,35 @@ route: /docs/strong-layouts
 parent: Documentation
 menu: Layouts
 ---
+# Strong Layouts
+
+Superbooks on Bubblin use **strong layouts**. 
+
+Strong layouts add visual structure to content in a way that is neither fixed which restricts scalability of content nor fluid in a way that allows uncontrollable reflow. It is somewhere in between, in that the content and layout remains elastic and stretchy to automatically occupy maximum real estate that is above the fold. The content of itself remains firm and scales in a proportionate manner so that the individual pieces retain their visual balance and positional integrity. Like stretching text on Spandex!
+
+The Superbook container scales the outer periphery of the `<page>` (dimensions of iframe) automatically. It manages a constant aspect ratio (height : width) using `dual` or `single` mode depending on the viewport being in portrait or landscape mode. This is done in a way so that "maximum real estate" is available on book for any user device. The inners of the iframe is where an author's content and a strong layout lives.
+
+Here's a somewhat contrived example of how height and width of `100vh` and `100vw` is applied on each page of the book:
+
+```CSS
+
+@import url('//fonts.googleapis.com/css?family=Source+Serif+Pro');
+
+html, body {
+  background: #fff;
+  margin: 0 0;
+  overflow: hidden;
+  color: #444;
+  font: 4vw/1.2 'Source Serif Pro', serif;
+}
+
+…
+…
+
+// Other style classes below as necessary.
+
+```
+
+Notice that the `font-size` is being set here using `viewport units` to allow _strong_ scaling unlike seen anywhere else—which brings us to the first rule of creating strong layout for Superbooks:
+
+> Rule #1: Never use a CSS framework on your book! See [best practices]({{ site.baseurl }}{% post_url 2018-01-01-practices %}) for a great layout.
