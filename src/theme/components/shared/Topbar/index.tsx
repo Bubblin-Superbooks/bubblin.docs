@@ -89,13 +89,8 @@ export const TOPBAR_LINKS: MenuListItem[] = [
   },
   {
     id: 3,
-    children: 'Starters',
-    to: '/starters',
-  },
-  {
-    id: 4,
-    children: 'Templates',
-    to: '/templates',
+    children: 'Layouts',
+    to: '/layouts',
   }
 ]
 

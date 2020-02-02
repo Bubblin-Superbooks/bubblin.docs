@@ -16,6 +16,6 @@ const Logo = styled(BaseLogo)`
 
 export const Footer = () => (
   <Wrapper>
-    <span>Built using Docz. © Marvin Danig</span> <Logo height={30} />
+    <span>© 3rd millenium+ (Bubblin Superbooks Inc., USA)</span> <Logo height={25} />
   </Wrapper>
 )

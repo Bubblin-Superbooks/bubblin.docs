@@ -62,7 +62,7 @@ export const Hero = () => {
       <Container>
         <Logo height={100} style={{ maxWidth: '100%' }} />
         <Title>Bubblin Documentation</Title>
-        <Subtitle>Understanding the <strong>Superbook</strong> format and the Bubblin Book Baking api.</Subtitle>
+        <Subtitle>Understanding the <strong>Superbook</strong> format and the Bubblin Binge Reader Api.</Subtitle>
         <Buttons>
           <Link scale="big" to="/docs/getting-started">
             Getting Started
