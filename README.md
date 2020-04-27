@@ -1,4 +1,4 @@
-# Bookiza documentaion website
+# Bubblin documentation 
 
 Static documentation for the [Bubblin Superbooks](https://bubblin.io) and the [Superbook format](https://bubblin.io/docs/format).
 
